@@ -1,0 +1,13 @@
+def perm(n):
+    B = []
+    if n == 1:
+        B.append("1")
+    else:   
+        for i in perm(n - 1):
+            for f in range(n):
+                pt1 = i[:f]
+                pt2 = i[f:]
+                B.append(pt1 + str(n) + pt2)
+    return B
+
+print(perm(3))
